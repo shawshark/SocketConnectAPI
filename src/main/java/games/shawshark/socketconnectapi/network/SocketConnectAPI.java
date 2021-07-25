@@ -61,26 +61,6 @@ public class SocketConnectAPI implements PluginMessageListener {
 		getPlugin().getServer().getMessenger().registerIncomingPluginChannel(getPlugin(), "BungeeCord", this);
 	}
 
-	/**
-	public void registerServerPlaceholders() {
-		for(Servers server : Servers.values()) {
-
-			PlaceholdersManager.PlaceholderData data = null;
-
-			if(server.isGameServer()) {
-				data = () ->
-						((CorePlugin)getPlugin()).getServerBalancerManager().getOnlineCount(server.getName()) + "";
-			} else {
-				data = () -> getCachingManager().getOnlineCount(username) + "";
-			}
-
-			CorePlugin core = (CorePlugin) getPlugin();
-			// register placeholders, Such as {core_lilypad_lobby1_players_online} returns maybe 10
-			core.getPlaceholdersManager().registerPlaceholder(
-					"_lilypad_" + server.getName() + "_players_online", data);
-		}
-	}*/
-
 	@Override
 	public void onPluginMessageReceived(@NotNull String channel, @NotNull Player player, @NotNull byte[] message) {
 	}
